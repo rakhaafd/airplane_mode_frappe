@@ -1,0 +1,1 @@
+Flight {{ doc.name }} departs in 24 hours.

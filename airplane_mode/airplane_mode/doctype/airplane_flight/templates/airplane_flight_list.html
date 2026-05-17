@@ -1,0 +1,227 @@
+{% extends "templates/base.html" %}
+
+{% block content %}
+
+<div class="flights-page">
+	<div class="flights-header">
+		<p class="label">AVAILABLE FLIGHTS</p>
+		<h1>Choose your journey</h1>
+		<p class="description">Browse our scheduled flights and find the perfect route for your next destination.</p>
+	</div>
+
+	<div class="flights-grid">
+		{% set flights = frappe.get_all(
+			"Airplane Flight",
+			fields=[
+				"name",
+				"route",
+				"source_airport_code",
+				"destination_airport_code",
+				"date_of_departure",
+				"time_of_departure",
+				"duration"
+			],
+			filters={"is_published": 1}
+		) %}
+
+		{% for flight in flights %}
+			<div class="flight-card">
+				<div class="flight-route">
+					<div class="airport-code">{{ flight.source_airport_code }}</div>
+					<div class="flight-arrow">→</div>
+					<div class="airport-code">{{ flight.destination_airport_code }}</div>
+				</div>
+
+				<div class="flight-details">
+					<div class="detail-item">
+						<span class="detail-label">Date</span>
+						<span class="detail-value">{{ frappe.utils.format_date(flight.date_of_departure, "d MMMM, YYYY") }}</span>
+					</div>
+					<div class="detail-item">
+						<span class="detail-label">Time</span>
+						<span class="detail-value">{{ flight.time_of_departure }}</span>
+					</div>
+					<div class="detail-item">
+						<span class="detail-label">Duration</span>
+						<span class="detail-value">{{ frappe.utils.format_duration(flight.duration) }}</span>
+					</div>
+				</div>
+
+				<a href="/{{ flight.route }}" class="btn-dark">View Flight →</a>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
+<style>
+.flights-page {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 60px 24px 100px;
+}
+
+.flights-header {
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.label {
+	font-size: 12px;
+	letter-spacing: 4px;
+	font-weight: 700;
+	color: #777;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.flights-header h1 {
+	font-size: 52px;
+	line-height: 1.1;
+	letter-spacing: -2px;
+	font-weight: 900;
+	color: #000;
+	margin-bottom: 16px;
+}
+
+.description {
+	max-width: 560px;
+	margin: 0 auto;
+	font-size: 18px;
+	line-height: 1.6;
+	color: #666;
+}
+
+.flights-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.flight-card {
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	border-radius: 28px;
+	padding: 32px 36px;
+	transition: all 0.2s ease;
+}
+
+.flight-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+.flight-route {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	margin-bottom: 28px;
+}
+
+.airport-code {
+	font-size: 32px;
+	font-weight: 800;
+	letter-spacing: -1px;
+	color: #000;
+	background: #f5f5f5;
+	padding: 12px 24px;
+	border-radius: 60px;
+}
+
+.flight-arrow {
+	font-size: 28px;
+	color: #ccc;
+	font-weight: 400;
+}
+
+.flight-details {
+	display: flex;
+	gap: 48px;
+	margin-bottom: 32px;
+	padding-bottom: 24px;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-item {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.detail-label {
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	color: #999;
+	text-transform: uppercase;
+}
+
+.detail-value {
+	font-size: 18px;
+	font-weight: 500;
+	color: #222;
+}
+
+.btn-dark {
+	display: inline-block;
+	padding: 14px 28px;
+	background: #000;
+	color: #fff;
+	border-radius: 999px;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 15px;
+	transition: 0.2s ease;
+}
+
+.btn-dark:hover {
+	background: #222;
+	color: #fff;
+	text-decoration: none;
+}
+
+@media (max-width: 768px) {
+	.flights-page {
+		padding: 40px 20px 80px;
+	}
+
+	.flights-header h1 {
+		font-size: 36px;
+	}
+
+	.flight-card {
+		padding: 24px;
+	}
+
+	.flight-route {
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	.airport-code {
+		font-size: 24px;
+		padding: 8px 18px;
+	}
+
+	.flight-arrow {
+		font-size: 20px;
+	}
+
+	.flight-details {
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.detail-value {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 480px) {
+	.airport-code {
+		font-size: 20px;
+		padding: 6px 14px;
+	}
+}
+</style>
+
+{% endblock %}

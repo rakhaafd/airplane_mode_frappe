@@ -1,0 +1,18 @@
+[
+ {
+  "airport": "Changi Airport",
+  "airport_shop": "Sky Duty Mart",
+  "docstatus": 0,
+  "doctype": "Airport Shop Rent Payment",
+  "modified": "2026-05-17 19:19:00.269978",
+  "name": "tga70r3d6b",
+  "paid_amount": 0.0,
+  "payment_date": null,
+  "payment_month": "May",
+  "payment_year": 2026,
+  "rent_amount": 24000.0,
+  "status": "Unpaid",
+  "tenant_email": "rakha@m.com",
+  "tenant_name": "tga4p304rl"
+ }
+]

@@ -1,0 +1,42 @@
+[
+ {
+  "customer_care_number": "+65-800-123-7788",
+  "docstatus": 0,
+  "doctype": "Airline",
+  "founding_year": 2005,
+  "headquarters": "Singapore",
+  "modified": "2026-05-15 18:02:52.513265",
+  "name": "SkyJet Asia",
+  "website": null
+ },
+ {
+  "customer_care_number": "+61-2-8899-2233",
+  "docstatus": 0,
+  "doctype": "Airline",
+  "founding_year": 2012,
+  "headquarters": "Sydney, Australia",
+  "modified": "2026-05-15 18:03:12.155795",
+  "name": "Pacific Breeze Airways",
+  "website": null
+ },
+ {
+  "customer_care_number": "+1-800-445-9921",
+  "docstatus": 0,
+  "doctype": "Airline",
+  "founding_year": 1987,
+  "headquarters": "Los Angeles, USA",
+  "modified": "2026-05-15 18:03:33.801474",
+  "name": "AeroVista Airlines",
+  "website": null
+ },
+ {
+  "customer_care_number": "+62-21-555-1001",
+  "docstatus": 0,
+  "doctype": "Airline",
+  "founding_year": 1998,
+  "headquarters": "Jakarta, Indonesia",
+  "modified": "2026-05-16 19:13:10.433679",
+  "name": "Garuda Nusantara Air",
+  "website": "https://www.garuda-indonesia.com/id/id"
+ }
+]

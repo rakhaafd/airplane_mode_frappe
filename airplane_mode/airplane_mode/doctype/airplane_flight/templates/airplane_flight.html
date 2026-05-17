@@ -1,0 +1,252 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+
+<div class="flight-detail-page">
+    <div class="flight-detail-card">
+        <div class="flight-header">
+            <p class="label">FLIGHT DETAILS</p>
+            <div class="flight-route-large">
+                <span class="airport-code-large">{{ doc.source_airport_code }}</span>
+                <span class="flight-arrow-large">→</span>
+                <span class="airport-code-large">{{ doc.destination_airport_code }}</span>
+            </div>
+        </div>
+
+        <div class="flight-info-grid">
+            <div class="info-row">
+                <div class="info-item">
+                    <span class="info-label">Airplane</span>
+                    <span class="info-value">{{ doc.airplane }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Status</span>
+                    <span class="info-value status-{{ doc.status|lower|replace(' ', '') }}">{{ doc.status }}</span>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-item">
+                    <span class="info-label">Date of Departure</span>
+                    <span class="info-value">{{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Time of Departure</span>
+                    <span class="info-value">{{ doc.time_of_departure }}</span>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-item">
+                    <span class="info-label">Duration</span>
+                    <span class="info-value">{{ frappe.utils.format_duration(doc.duration) }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Flight Number</span>
+                    <span class="info-value">{{ doc.name }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flight-actions">
+            <a href="/book-flight/new?flight={{ doc.name }}" class="btn-dark btn-large">
+                Book This Flight →
+            </a>
+            <a href="/flights" class="btn-light btn-large">
+                ← Back to Flights
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+.flight-detail-page {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    background: #fff;
+}
+
+.flight-detail-card {
+    max-width: 720px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 32px;
+    padding: 48px;
+}
+
+.flight-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.label {
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: #777;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.flight-route-large {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.airport-code-large {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #000;
+    background: #f5f5f5;
+    padding: 16px 32px;
+    border-radius: 80px;
+}
+
+.flight-arrow-large {
+    font-size: 36px;
+    color: #ccc;
+    font-weight: 400;
+}
+
+.flight-info-grid {
+    margin-bottom: 40px;
+}
+
+.info-row {
+    display: flex;
+    gap: 48px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.info-value {
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+}
+
+.status-scheduled {
+    color: #2b7e3a;
+    font-weight: 600;
+}
+
+.status-delayed {
+    color: #c4492c;
+    font-weight: 600;
+}
+
+.status-boarding {
+    color: #e67e22;
+    font-weight: 600;
+}
+
+.status-departed {
+    color: #2980b9;
+    font-weight: 600;
+}
+
+.flight-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.btn-dark,
+.btn-light {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    transition: 0.2s ease;
+    text-align: center;
+    flex: 1;
+}
+
+.btn-dark {
+    background: #000;
+    color: #fff;
+}
+
+.btn-dark:hover {
+    background: #222;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-light {
+    border: 1px solid #d4d4d4;
+    color: #000;
+    background: #fff;
+}
+
+.btn-light:hover {
+    background: #f5f5f5;
+    color: #000;
+    text-decoration: none;
+}
+
+@media (max-width: 640px) {
+    .flight-detail-card {
+        padding: 28px;
+    }
+
+    .airport-code-large {
+        font-size: 32px;
+        padding: 12px 20px;
+    }
+
+    .flight-arrow-large {
+        font-size: 24px;
+    }
+
+    .info-row {
+        flex-direction: column;
+        gap: 20px;
+        padding: 16px 0;
+    }
+
+    .info-value {
+        font-size: 16px;
+    }
+
+    .flight-actions {
+        flex-direction: column;
+    }
+
+    .btn-dark, .btn-light {
+        text-align: center;
+    }
+}
+</style>
+
+{% endblock %}

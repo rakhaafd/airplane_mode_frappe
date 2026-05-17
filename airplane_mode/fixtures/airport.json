@@ -1,0 +1,38 @@
+[
+ {
+  "city": "Singapore",
+  "code": "SIN",
+  "country": "Singapore",
+  "docstatus": 0,
+  "doctype": "Airport",
+  "modified": "2026-05-15 18:25:59.261090",
+  "name": "Changi Airport"
+ },
+ {
+  "city": "Sydney",
+  "code": "SYD",
+  "country": "Australia",
+  "docstatus": 0,
+  "doctype": "Airport",
+  "modified": "2026-05-15 18:26:19.811795",
+  "name": "Sydney Kingsford Smith Airport"
+ },
+ {
+  "city": "Denpasar",
+  "code": "DPS",
+  "country": "Indonesia",
+  "docstatus": 0,
+  "doctype": "Airport",
+  "modified": "2026-05-15 18:25:46.320214",
+  "name": "Ngurah Rai International Airport"
+ },
+ {
+  "city": "Jakarta",
+  "code": "CGK",
+  "country": "Indonesia",
+  "docstatus": 0,
+  "doctype": "Airport",
+  "modified": "2026-05-15 18:25:25.392394",
+  "name": "Soekarno–Hatta International Airport"
+ }
+]

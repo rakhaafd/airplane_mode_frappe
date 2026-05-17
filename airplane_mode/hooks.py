@@ -8,6 +8,18 @@ app_license = "mit"
 # Apps
 # ------------------
 
+fixtures = [
+    "Airplane",
+    "Airport",
+    "Airline",
+    "Airplane Flight",
+    "Airplane Ticket",
+    "Airport Shop",
+    "Shop Type",
+    "Airport Shop Lead",
+    "Airport Shop Rent Payment",
+]
+
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
@@ -148,6 +160,13 @@ app_license = "mit"
 
 # Scheduled Tasks
 # ---------------
+
+scheduler_events = {
+	"monthly": [
+		"airplane_mode.airport_shop_management.doctype.airport_shop.airport_shop.send_rent_reminders",
+        "airplane_mode.airport_shop_management.doctype.airport_shop.airport_shop.create_monthly_rent_payments"
+	]
+}
 
 # scheduler_events = {
 # 	"all": [

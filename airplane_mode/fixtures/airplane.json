@@ -1,0 +1,52 @@
+[
+ {
+  "airline": "Garuda Nusantara Air",
+  "capacity": 2,
+  "docstatus": 0,
+  "doctype": "Airplane",
+  "initial_audit_completed": 0,
+  "model": "Boeing 737-800",
+  "modified": "2026-05-16 19:24:53.668690",
+  "name": "Garuda Nusantara Air-003"
+ },
+ {
+  "airline": "SkyJet Asia",
+  "capacity": 220,
+  "docstatus": 0,
+  "doctype": "Airplane",
+  "initial_audit_completed": 0,
+  "model": "Airbus A321neo",
+  "modified": "2026-05-15 18:20:58.029052",
+  "name": "SkyJet Asia-004"
+ },
+ {
+  "airline": "AeroVista Airlines",
+  "capacity": 396,
+  "docstatus": 0,
+  "doctype": "Airplane",
+  "initial_audit_completed": 0,
+  "model": "Boeing 777-300ER",
+  "modified": "2026-05-15 18:21:31.557488",
+  "name": "AeroVista Airlines-005"
+ },
+ {
+  "airline": "Garuda Nusantara Air",
+  "capacity": 180,
+  "docstatus": 0,
+  "doctype": "Airplane",
+  "initial_audit_completed": 0,
+  "model": "Airbus A320",
+  "modified": "2026-05-15 18:17:02.925307",
+  "name": "Garuda Nusantara Air-002"
+ },
+ {
+  "airline": "Pacific Breeze Airways",
+  "capacity": 277,
+  "docstatus": 0,
+  "doctype": "Airplane",
+  "initial_audit_completed": 0,
+  "model": "Airbus A330-300",
+  "modified": "2026-05-15 18:21:52.627401",
+  "name": "Pacific Breeze Airways-006"
+ }
+]
