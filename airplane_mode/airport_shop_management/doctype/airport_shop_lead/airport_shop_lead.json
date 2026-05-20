@@ -7,7 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "shop",
-  "name1",
+  "username",
   "email",
   "phone",
   "message"
@@ -19,13 +19,6 @@
    "in_list_view": 1,
    "label": "Shop",
    "options": "Airport Shop",
-   "reqd": 1
-  },
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Name",
    "reqd": 1
   },
   {
@@ -43,12 +36,19 @@
    "fieldname": "message",
    "fieldtype": "Small Text",
    "label": "Message"
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-17 14:12:17.959010",
+ "modified": "2026-05-19 13:22:53.433624",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Airport Shop Lead",

@@ -21,7 +21,7 @@ class AirplaneFlight(WebsiteGenerator):
 		destination_airport: DF.Link
 		destination_airport_code: DF.Data | None
 		duration: DF.Duration
-		gate_number: DF.Data
+		gate_number: DF.Data | None
 		is_published: DF.Check
 		price: DF.Currency
 		route: DF.Data | None

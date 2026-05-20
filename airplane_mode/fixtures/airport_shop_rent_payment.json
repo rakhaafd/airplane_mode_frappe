@@ -1,5 +1,21 @@
 [
  {
+  "airport": "Soekarno–Hatta International Airport",
+  "airport_shop": "SkyMart Express",
+  "docstatus": 0,
+  "doctype": "Airport Shop Rent Payment",
+  "modified": "2026-05-19 12:52:26.286388",
+  "name": "ig6piogri3",
+  "paid_amount": 0.0,
+  "payment_date": null,
+  "payment_month": "May",
+  "payment_year": 2026,
+  "rent_amount": 15000.0,
+  "status": "Unpaid",
+  "tenant_email": "rakhafausta07@gmail.com",
+  "tenant_name": "ig6k3q8h3v"
+ },
+ {
   "airport": "Changi Airport",
   "airport_shop": "Sky Duty Mart",
   "docstatus": 0,

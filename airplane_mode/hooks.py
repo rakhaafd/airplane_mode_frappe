@@ -12,11 +12,10 @@ fixtures = [
     "Airplane",
     "Airport",
     "Airline",
-    "Airplane Flight",
+    "Airport Shop Lead",
     "Airplane Ticket",
     "Airport Shop",
     "Shop Type",
-    "Airport Shop Lead",
     "Airport Shop Rent Payment",
 ]
 

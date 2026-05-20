@@ -4,6 +4,21 @@ from frappe.utils import today, getdate
 
 
 class AirportShopLead(Document):
+	# begin: auto-generated types
+	# This code is auto-generated. Do not modify anything in this block.
+
+	from typing import TYPE_CHECKING
+
+	if TYPE_CHECKING:
+		from frappe.types import DF
+
+		email: DF.Data | None
+		message: DF.SmallText | None
+		phone: DF.Data | None
+		shop: DF.Link
+		username: DF.Data
+
+	# end: auto-generated types
 
 	def after_insert(self):
 		self.convert_lead_to_tenant()
@@ -18,7 +33,7 @@ class AirportShopLead(Document):
 			frappe.throw("This shop is already occupied.")
 
 		shop.status = "Occupied"
-		shop.tenant_name = self.name
+		shop.tenant_name = self.username
 		shop.tenant_email = self.email
 		shop.tenant_phone = self.phone
 		shop.save(ignore_permissions=True)
@@ -44,6 +59,8 @@ class AirportShopLead(Document):
 
 		payment = frappe.new_doc("Airport Shop Rent Payment")
 		payment.airport_shop = shop.name
+		payment.tenant_name = shop.tenant_name
+		payment.tenant_email = shop.tenant_email
 		payment.payment_month = month
 		payment.payment_year = year
 		payment.rent_amount = shop.rent_amount or 0

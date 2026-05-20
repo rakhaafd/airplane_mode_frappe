@@ -6,8 +6,19 @@
   "message": "aaa",
   "modified": "2026-05-17 19:19:00.239055",
   "name": "tga4p304rl",
-  "name1": "Rakha",
   "phone": "12121 ",
-  "shop": "Sky Duty Mart"
+  "shop": "Sky Duty Mart",
+  "shop_name": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Airport Shop Lead",
+  "email": "rakhafausta07@gmail.com",
+  "message": "aaa",
+  "modified": "2026-05-19 12:52:26.263843",
+  "name": "ig6k3q8h3v",
+  "phone": "1212",
+  "shop": "SkyMart Express",
+  "shop_name": "aaa"
  }
 ]

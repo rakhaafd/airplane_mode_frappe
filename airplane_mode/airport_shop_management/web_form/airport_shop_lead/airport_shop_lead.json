@@ -21,7 +21,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2026-05-17 14:58:33.564037",
+ "modified": "2026-05-19 13:24:30.843566",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "airport-shop-lead",
@@ -49,7 +49,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "name1",
+   "fieldname": "username",
    "fieldtype": "Data",
    "hidden": 0,
    "label": "Name",
